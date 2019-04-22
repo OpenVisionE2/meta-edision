@@ -6,7 +6,9 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PROVIDES = "virtual/libgles2 virtual/egl"
 
-SRC_URI = "https://github.com/edision-open/edision-gl/releases/download/v${PV}/${BPN}-${PV}.tar.xz"
+SRC_URI = "http://source.mynonpublic.com/edision/libv3d-${MACHINE}-${PV}.tar.xz"
+
+S = "${WORKDIR}/libv3d-osmio4k-${PV}"
 
 FILES_SOLIBSDEV = ""
 FILES_${PN} += "${libdir}/lib*${SOLIBSDEV}"
