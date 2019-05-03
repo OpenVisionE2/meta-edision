@@ -2,8 +2,6 @@ DESCRIPTION = "Edision Kernel"
 SECTION = "kernel"
 LICENSE = "GPLv2"
 
-INC_PR = "r0"
-
 DEPENDS += "xz-native bc-native"
 DEPENDS_append_aarch64 = " libgcc"
 KERNEL_CC_append_aarch64 = " ${TOOLCHAIN_OPTIONS}"

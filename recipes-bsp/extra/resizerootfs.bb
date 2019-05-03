@@ -7,7 +7,6 @@ COMPATIBLE_MACHINE = "osmio4k|osmio4kplus"
 
 RDEPENDS_${PN} = "e2fsprogs-resize2fs"
 PV = "1.0"
-PR = "r0"
 
 SRC_URI = "file://resizerootfs"
 

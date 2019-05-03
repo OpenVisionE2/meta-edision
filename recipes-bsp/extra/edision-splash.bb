@@ -7,8 +7,6 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 require conf/license/license-gplv2.inc
 inherit deploy
 
-PR = "r0"
-
 S = "${WORKDIR}"
 
 SRC_URI = "file://splash.bin"

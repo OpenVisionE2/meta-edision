@@ -1,8 +1,6 @@
 require linux-os.inc
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
-PR = "r1"
-
 SRC_URI = "http://source.mynonpublic.com/edision/linux-edision-${PV}.tar.xz \
 	file://defconfig \
 	file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \

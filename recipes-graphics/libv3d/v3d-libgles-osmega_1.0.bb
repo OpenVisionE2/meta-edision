@@ -1,8 +1,6 @@
 require libv3d.inc
 GLES3DIR = ""
 
-PR = "r1"
-
 COMPATIBLE_MACHINE = "osmega"
 
 SRC_URI[md5sum] = "37f2f6cbfcfb94f290e2fef29ccbd0d8"
