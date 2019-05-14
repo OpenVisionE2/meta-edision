@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-brcmstb-${PV}/COPYING;md5=bbea815ee2
 
 DEPENDS += "flex-native bison-native openssl-native"
 
-MACHINE_KERNEL_PR_append = ".1"
+MACHINE_KERNEL_PR_append = ".2"
 
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
@@ -29,6 +29,7 @@ RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 SRC_URI += "http://source.mynonpublic.com/edision/linux-edision-${PV}.tar.gz \
     file://defconfig \
     file://findkerneldevice.py \
+    file://0001-Add-support-for-TBS5980-and-TBS5925.patch \
     "
 
 S = "${WORKDIR}/linux-brcmstb-${PV}"
