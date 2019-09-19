@@ -5,12 +5,12 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "osmio4k|osmio4kplus"
 
-KERNEL_RELEASE = "5.2"
+KERNEL_RELEASE = "5.3"
 
 inherit kernel machine_kernel_pr
 
-SRC_URI[md5sum] = "c6ad06e05a993799cbcb25bbe1b01765"
-SRC_URI[sha256sum] = "ecde2b68c66586afe3dafaa3d6643ac71e3b784bace48d21f89e0918c07daab2"
+SRC_URI[md5sum] = "2e62f620586356d8d8c7ec1feb519ac6"
+SRC_URI[sha256sum] = "a60bdb1858c3ccbb8581a6ef309f24804272de2fd3464a7fe4d77529073e224b"
 
 LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-brcmstb-${PV}/COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
@@ -19,15 +19,14 @@ DEPENDS += "flex-native bison-native openssl-native coreutils-native"
 # By default, kernel.bbclass modifies package names to allow multiple kernels
 # to be installed in parallel. We revert this change and rprovide the versioned
 # package names instead, to allow only one kernel to be installed.
-PKG_kernel-base = "kernel-base"
-PKG_kernel-image = "kernel-image"
-RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
+PKG_${KERNEL_PACKAGE_NAME}-base = "kernel-base"
+PKG_${KERNEL_PACKAGE_NAME}-image = "kernel-image"
+RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
 SRC_URI += "http://source.mynonpublic.com/edision/linux-edision-${PV}.tar.gz \
     file://defconfig \
     file://findkerneldevice.py \
-    file://0001-Add-support-for-TBS5980-and-TBS5925.patch \
     "
 
 S = "${WORKDIR}/linux-brcmstb-${PV}"
@@ -37,13 +36,7 @@ export OS = "Linux"
 KERNEL_OBJECT_SUFFIX = "ko"
 KERNEL_IMAGEDEST = "tmp"
 
-FILES_kernel-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}* ${KERNEL_IMAGEDEST}/findkerneldevice.py"
-
-do_shared_workdir_append() {
-       unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
-       make CC="${KERNEL_CC}" LD="${KERNEL_LD}" AR="${KERNEL_AR}" \
-                  -C ${STAGING_KERNEL_DIR} O=${STAGING_KERNEL_BUILDDIR} scripts prepare
-}
+FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}* ${KERNEL_IMAGEDEST}/findkerneldevice.py"
 
 kernel_do_install_append () {
     install -d ${D}/${KERNEL_IMAGEDEST}
