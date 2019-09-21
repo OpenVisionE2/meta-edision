@@ -27,6 +27,7 @@ RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 SRC_URI += "http://source.mynonpublic.com/edision/linux-edision-${PV}.tar.gz \
     file://defconfig \
     file://findkerneldevice.py \
+    file://0001-Add-support-for-TBS5980-and-TBS5925.patch \
     "
 
 S = "${WORKDIR}/linux-brcmstb-${PV}"
