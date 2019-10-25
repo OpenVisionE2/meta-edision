@@ -13,7 +13,7 @@ IMAGE_CMD_emmcimg_append = "\
     cp -f ${DEPLOY_DIR_IMAGE}/${KERNEL_IMAGETYPE}-${MACHINE}.bin ${IMGDEPLOYDIR}/${IMAGEDIR}/kernel.bin; \
     cp -f ${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.tar.bz2 ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.tar.bz2; \
     cp -f ${DEPLOY_DIR_IMAGE}/splash.bin ${IMGDEPLOYDIR}/${IMAGEDIR}; \
-    echo "${IMAGEVERSION}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
+    echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
     echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
     cd ${IMGDEPLOYDIR}; \
     zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
