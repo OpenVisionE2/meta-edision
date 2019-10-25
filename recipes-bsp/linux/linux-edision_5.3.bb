@@ -1,71 +1,40 @@
-SUMMARY = "Linux kernel for ${MACHINE}"
-SECTION = "kernel"
-LICENSE = "GPLv2"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
+require linux-os.inc
+LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
+
+DEPENDS += "coreutils-native"
+
+SRC_URI = "${KERNELORG_MIRROR}/linux/kernel/v5.x/linux-${PV}.tar.xz;name=kernel \
+	https://github.com/edision-open/edision-kernel/releases/download/v${PV}/edision-kernel-${PV}.patch.xz;apply=yes;name=kernelpatch \
+	file://defconfig \
+	file://findkerneldevice.py \
+	file://0001-Add-support-for-TBS5980-and-TBS5925.patch \
+	"
 
 COMPATIBLE_MACHINE = "^(osmio4k|osmio4kplus)$"
 
-KERNEL_RELEASE = "5.3"
+SRC_URI[kernel.md5sum] = "c99feaade8047339528fb066ec5f8a49"
+SRC_URI[kernel.sha256sum] = "78f3c397513cf4ff0f96aa7d09a921d003e08fa97c09e0bb71d88211b40567b2"
+SRC_URI[kernelpatch.md5sum] = "7fac07dffa9e76e036e8036e4ba39436"
+SRC_URI[kernelpatch.sha256sum] = "4c4af3129a98db33892d7c8d649a377d57875f32ce572ffa6f6c19c2dc54b586"
 
-inherit kernel machine_kernel_pr
+FILES_kernel-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}* ${KERNEL_IMAGEDEST}/findkerneldevice.py"
 
-SRC_URI[md5sum] = "2e62f620586356d8d8c7ec1feb519ac6"
-SRC_URI[sha256sum] = "a60bdb1858c3ccbb8581a6ef309f24804272de2fd3464a7fe4d77529073e224b"
-
-LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-brcmstb-${PV}/COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
-
-DEPENDS += "flex-native bison-native openssl-native coreutils-native"
-
-# By default, kernel.bbclass modifies package names to allow multiple kernels
-# to be installed in parallel. We revert this change and rprovide the versioned
-# package names instead, to allow only one kernel to be installed.
-PKG_${KERNEL_PACKAGE_NAME}-base = "kernel-base"
-PKG_${KERNEL_PACKAGE_NAME}-image = "kernel-image"
-RPROVIDES_${KERNEL_PACKAGE_NAME}-base = "kernel-${KERNEL_VERSION}"
-RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
-
-SRC_URI += "http://source.mynonpublic.com/edision/linux-edision-${PV}.tar.gz \
-    file://defconfig \
-    file://findkerneldevice.py \
-    file://0001-Add-support-for-TBS5980-and-TBS5925.patch \
-    "
-
-S = "${WORKDIR}/linux-brcmstb-${PV}"
-B = "${WORKDIR}/build"
-
-export OS = "Linux"
-KERNEL_OBJECT_SUFFIX = "ko"
-KERNEL_IMAGEDEST = "tmp"
-
-FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}* ${KERNEL_IMAGEDEST}/findkerneldevice.py"
+do_shared_workdir_append() {
+	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
+	make CC="${KERNEL_CC}" LD="${KERNEL_LD}" AR="${KERNEL_AR}" \
+	           -C ${STAGING_KERNEL_DIR} O=${STAGING_KERNEL_BUILDDIR} scripts prepare
+}
 
 kernel_do_install_append () {
-    install -d ${D}/${KERNEL_IMAGEDEST}
-    install -m 0644 ${KERNEL_OUTPUT_DIR}/${KERNEL_IMAGETYPE} ${D}/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-    install -m 0644 ${WORKDIR}/findkerneldevice.py ${D}/${KERNEL_IMAGEDEST}
+	install -d ${D}/${KERNEL_IMAGEDEST}
+	install -m 0644 ${KERNEL_OUTPUT_DIR}/${KERNEL_IMAGETYPE} ${D}/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
+	install -m 0644 ${WORKDIR}/findkerneldevice.py ${D}/${KERNEL_IMAGEDEST}
 }
 
 pkg_postinst_kernel-image () {
-    if [ "x$D" == "x" ]; then
-        if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION} ] ; then
-            if grep -q 'root=/dev/mmcblk' /proc/cmdline ; then
-                python /${KERNEL_IMAGEDEST}/findkerneldevice.py
-                dd if=/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} of=/dev/kernel
-            else
-                flash_erase /dev/${MTD_KERNEL} 0 0
-                nandwrite -p /dev/${MTD_KERNEL} /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-                rm -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-            fi
-        fi
-    fi
-    true
+	if [ -z "$D" ]
+	then
+		python /${KERNEL_IMAGEDEST}/findkerneldevice.py
+		dd if=/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION} of=/dev/kernel
+	fi
 }
-
-pkg_postrm_kernel-image () {
-}
-
-do_rm_work() {
-}
-
-# extra tasks
-addtask kernel_link_images after do_compile before do_install
