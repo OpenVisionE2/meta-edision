@@ -3,7 +3,7 @@ SECTION = "kernel"
 LICENSE = "GPLv2"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "osmio4k|osmio4kplus"
+COMPATIBLE_MACHINE = "^(osmio4k|osmio4kplus)$"
 
 KERNEL_RELEASE = "5.3"
 
