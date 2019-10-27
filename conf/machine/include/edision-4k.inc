@@ -5,7 +5,7 @@ require conf/machine/include/build-extras.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     edision-dvb-modules-${MACHINE} \
-    resizerootfs \
+    edision-resizerootfs \
     wlan-qcacld-20 \
     firmware-qca6174 \
     wireless-regdb-static \

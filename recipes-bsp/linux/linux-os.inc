@@ -1,4 +1,4 @@
-DESCRIPTION = "Edision Kernel"
+DESCRIPTION = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
 
