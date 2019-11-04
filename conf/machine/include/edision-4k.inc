@@ -11,14 +11,16 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     wireless-regdb-static \
 "
 
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-cdfs"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-hci-uart"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-btqca"
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-rt2800usb"
+MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
+    kernel-module-cdfs \
+    kernel-module-rt2800usb \
+"
 
-MACHINE_EXTRA_RRECOMMENDS += "enigma2-plugin-drivers-dvb-usb-opticombo"
-MACHINE_EXTRA_RRECOMMENDS += "gst-plugin-dvbmediasink"
-MACHINE_EXTRA_RRECOMMENDS += "edision-splash"
+MACHINE_EXTRA_RRECOMMENDS += "\
+    enigma2-plugin-drivers-dvb-usb-opticombo \
+    gst-plugin-dvbmediasink \
+    edision-splash \
+"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-pcm --with-dtsdownmix --with-eac3 --with-h265 --with-vb9"
 
@@ -43,10 +45,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 KERNEL_IMAGETYPE = "Image.gz"
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-KERNEL_MODULE_AUTOLOAD += "wlan"
-KERNEL_MODULE_AUTOLOAD += "hci_uart"
-
-MACHINE_FEATURES += "dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
+MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
 
 require conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/rootfs-emmc.inc
