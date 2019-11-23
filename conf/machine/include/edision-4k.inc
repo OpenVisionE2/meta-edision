@@ -1,5 +1,7 @@
 CHIPSET = "bcm72604"
 
+require conf/distro/multilib.inc
+
 require conf/machine/include/brahma-b53.inc
 require conf/machine/include/build-extras.inc
 
