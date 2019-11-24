@@ -47,7 +47,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 KERNEL_IMAGETYPE = "Image.gz"
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
+MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement multilib"
 
 require conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/rootfs-emmc.inc
