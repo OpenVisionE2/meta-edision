@@ -5,8 +5,6 @@ UBINIZE_ARGS = "-m 2048 -p 128KiB"
 
 IMAGEDIR ?= "${MACHINE}"
 IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
-IMAGEVERSION := "${DISTRO_NAME}-${DISTRO_VERSION}-${DATE}"
-IMAGEVERSION[vardepsexclude] = "DATE"
 
 IMAGE_CMD_ubi_prepend = " \
 	rm -rf ${IMAGE_ROOTFS}/boot/*; \
