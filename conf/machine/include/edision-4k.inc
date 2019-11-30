@@ -1,5 +1,7 @@
 CHIPSET = "bcm72604"
 
+BOX_BRAND = "edision"
+
 require conf/distro/multilib.inc
 
 require conf/machine/include/brahma-b53.inc
