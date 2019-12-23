@@ -13,6 +13,7 @@ IMAGE_CMD_emmcimg_append = "\
     cp -f ${DEPLOY_DIR_IMAGE}/splash.bin ${IMGDEPLOYDIR}/${IMAGEDIR}; \
     echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
     echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
+    rm -f ${IMGDEPLOYDIR}/*.zip; \
     cd ${IMGDEPLOYDIR}; \
     zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
     zip ${IMAGE_NAME}_multiboot_ofgwrite.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/kernel.bin ${IMAGEDIR}/rootfs.tar.bz2; \
