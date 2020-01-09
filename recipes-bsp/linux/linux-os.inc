@@ -21,18 +21,6 @@ B = "${WORKDIR}/build"
 
 KERNEL_IMAGEDEST = "tmp"
 
-FILES_kernel-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}*"
-
-pkg_postinst_kernel-image () {
-	if [ -z "$D" ]
-	then
-		MTD_DEVICE=$(grep 'kernel' /proc/mtd | cut -f1 -d':')
-		flash_eraseall /dev/${MTD_DEVICE}
-		nandwrite -p /dev/${MTD_DEVICE} /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-		rm -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
-	fi
-}
-
 pkg_postrm_kernel-image () {
 }
 

@@ -17,3 +17,15 @@ COMPATIBLE_MACHINE = "^(osnino|osninoplus|osninopro)$"
 
 SRC_URI[md5sum] = "10eb489d6d34213451ae808f55f449da"
 SRC_URI[sha256sum] = "21a2db8e25d8eab13674cc45f8b102d7fa126b950648a02590daef4ff4c00f4c"
+
+FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}*"
+
+pkg_postinst_kernel-image () {
+	if [ -z "$D" ]
+	then
+		MTD_DEVICE=$(grep 'kernel' /proc/mtd | cut -f1 -d':')
+		flash_eraseall /dev/${MTD_DEVICE}
+		nandwrite -p /dev/${MTD_DEVICE} /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
+		rm -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
+	fi
+}
