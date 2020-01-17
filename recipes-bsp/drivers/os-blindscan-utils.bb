@@ -22,7 +22,6 @@ S = "${WORKDIR}"
 FILES_os-blindscan-dvbs-utils = "${bindir}/blindscan"
 FILES_os-blindscan-dvbc-utils = "${bindir}/tda1002x"
 
-INSANE_SKIP_${PN} += "already-stripped"
 
 do_install() {
 	install -d ${D}${bindir}
