@@ -6,6 +6,7 @@ DEPENDS += "coreutils-native"
 SRC_URI = "${KERNELORG_MIRROR}/linux/kernel/v5.x/linux-${PV}.tar.xz;name=kernel \
 	https://github.com/edision-open/edision-kernel/releases/download/v${PV}/edision-kernel-${PV}.patch.xz;apply=yes;name=kernelpatch \
 	file://defconfig \
+	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
 	file://findkerneldevice.py \
 	file://0001-Add-support-for-TBS5980-and-TBS5925.patch \
 	"
