@@ -1,6 +1,8 @@
 require conf/machine/include/bmips.inc
 require conf/machine/include/build-extras.inc
 
+BOX_BRAND = "edision"
+
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "os-dvb-modules-${MACHINE}"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "rt8723bs"
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-hci-uart"
