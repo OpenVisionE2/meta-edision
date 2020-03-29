@@ -34,7 +34,7 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbs = "edision-blindscan-utils-${MACHINE}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "edision-blindscan-utils-${MACHINE}"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-edision"
-PREFERRED_VERSION_linux-edision = "5.5"
+PREFERRED_VERSION_linux-edision = "5.5.9"
 
 PREFERRED_PROVIDER_virtual/egl = "libv3d-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgles2 = "libv3d-${MACHINE}"
@@ -46,7 +46,6 @@ MTD_ROOTFS = "mmcblk1p3"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
-KERNEL_IMAGETYPE = "Image.gz"
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
 MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement multilib"
