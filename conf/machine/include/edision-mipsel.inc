@@ -1,4 +1,7 @@
-require conf/machine/include/bmips.inc
+TARGET_ARCH = "mipsel"
+DEFAULTTUNE = "mips32el"
+
+require conf/machine/include/tune-mips32.inc
 require conf/machine/include/build-extras.inc
 
 BOX_BRAND = "edision"
@@ -26,3 +29,6 @@ MACHINE_FEATURES += "alsa wlan 3dtv switchoff osdposition hdmicec textlcd dvb-c 
 
 require conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/rootfs-ubi.inc
+
+KERNEL_FILE = "kernel.bin"
+ROOTFS_FILE = "rootfs.bin"

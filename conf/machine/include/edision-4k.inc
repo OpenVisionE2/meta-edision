@@ -4,8 +4,12 @@ BOX_BRAND = "edision"
 
 require conf/distro/multilib.inc
 
-require conf/machine/include/brahma-b53.inc
 require conf/machine/include/build-extras.inc
+
+DEFAULTTUNE = "aarch64"
+KERNEL_IMAGETYPE = "Image.gz"
+
+require conf/machine/include/arm/arch-armv8a.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     edision-dvb-modules-${MACHINE} \
