@@ -17,7 +17,6 @@ S = "${WORKDIR}/libv3d"
 
 LIBV3DARCH ?= ""
 LIBV3DARCH_arm = "arm-linux-gnueabihf"
-LIBV3DARCH_aarch64 = "aarch64-linux-gnu"
 
 do_configure[noexec] = "1"
 

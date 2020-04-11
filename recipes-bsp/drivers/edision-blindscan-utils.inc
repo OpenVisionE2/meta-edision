@@ -16,7 +16,6 @@ SRC_URI = "https://github.com/edision-open/edision-blindscan-utils/releases/down
 S = "${WORKDIR}"
 BLINDSCANARCH ?= ""
 BLINDSCANARCH_arm = "arm-linux-gnueabihf"
-BLINDSCANARCH_aarch64 = "aarch64-linux-gnu"
 BLINDSCANARCH_mipsel = "mipsel-linux-gnu"
 
 FILES_edision-blindscan-dvbs-utils-${MACHINE} = "${bindir}/blindscan"

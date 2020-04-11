@@ -2,12 +2,10 @@ CHIPSET = "bcm72604"
 
 BOX_BRAND = "edision"
 
-require conf/distro/multilib.inc
-
 require conf/machine/include/build-extras.inc
 
-DEFAULTTUNE = "aarch64"
-KERNEL_IMAGETYPE = "Image.gz"
+DEFAULTTUNE = "armv7vehf-neon-vfpv4"
+KERNEL_IMAGETYPE = "zImage"
 
 require conf/machine/include/arm/arch-armv8a.inc
 
@@ -38,7 +36,7 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbs = "edision-blindscan-utils-${MACHINE}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "edision-blindscan-utils-${MACHINE}"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-edision"
-PREFERRED_VERSION_linux-edision = "5.5.9"
+PREFERRED_VERSION_linux-edision = "5.5.16"
 
 PREFERRED_PROVIDER_virtual/egl = "libv3d-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgles2 = "libv3d-${MACHINE}"
@@ -52,7 +50,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement multilib"
+MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
 
 require conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/rootfs-emmc.inc
