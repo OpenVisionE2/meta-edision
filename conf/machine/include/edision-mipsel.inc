@@ -2,7 +2,9 @@ TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
 require conf/machine/include/tune-mips32.inc
-require conf/machine/include/build-extras.inc
+
+# We know about rtc
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 BOX_BRAND = "edision"
 
@@ -27,7 +29,8 @@ KERNEL_MODULE_AUTOLOAD += "hci_uart"
 
 MACHINE_FEATURES += "alsa wlan 3dtv switchoff osdposition hdmicec textlcd dvb-c videoenhancement"
 
-require conf/machine/include/autoload-filesystems.inc
+KERNEL_MODULE_AUTOLOAD += "xfs"
+
 require conf/machine/include/rootfs-ubi.inc
 
 KERNEL_FILE = "kernel.bin"

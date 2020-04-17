@@ -2,7 +2,8 @@ CHIPSET = "bcm72604"
 
 BOX_BRAND = "edision"
 
-require conf/machine/include/build-extras.inc
+# We know about rtc
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 DEFAULTTUNE = "armv7vehf-neon-vfpv4"
 KERNEL_IMAGETYPE = "zImage"
@@ -52,5 +53,6 @@ KERNEL_CONSOLE = "ttyS0,115200n8"
 
 MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
 
-require conf/machine/include/autoload-filesystems.inc
+KERNEL_MODULE_AUTOLOAD += "xfs"
+
 require conf/machine/include/rootfs-emmc.inc
