@@ -1,4 +1,4 @@
-DESCRIPTION = "Resize Rootfs"
+DESCRIPTION = "Edision resize rootfs"
 require conf/license/license-gplv2.inc
 
 COMPATIBLE_MACHINE = "^(osmio4k|osmio4kplus|osmini4k)$"
