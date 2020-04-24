@@ -13,9 +13,12 @@ IMAGE_CMD_emmcimg_append = "\
     cp -f ${DEPLOY_DIR_IMAGE}/splash.bin ${IMGDEPLOYDIR}/${IMAGEDIR}; \
     echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
     echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
+    echo "***** ATTENTION *****" >${IMGDEPLOYDIR}/${IMAGEDIR}/recovery_${MACHINE}_READ.ME; \
+    echo "The RECOVERY is only required for new installation of the ${MACHINE}" >>${IMGDEPLOYDIR}/${IMAGEDIR}/recovery_${MACHINE}_READ.ME; \
+    echo "The ${IMAGE_NAME}_recovery_emmc.zip deletes all images including the multiboot images" >>${IMGDEPLOYDIR}/${IMAGEDIR}/recovery_${MACHINE}_READ.ME; \
     rm -f ${IMGDEPLOYDIR}/*.zip; \
     cd ${IMGDEPLOYDIR}; \
-    zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
-    zip ${IMAGE_NAME}_multiboot_ofgwrite.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/kernel.bin ${IMAGEDIR}/rootfs.tar.bz2; \
+    zip -j ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/recovery_${MACHINE}_READ.ME ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
+    zip -j ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/kernel.bin ${IMAGEDIR}/rootfs.tar.bz2; \
     rm -rf ${IMAGEDIR}; \
     "
