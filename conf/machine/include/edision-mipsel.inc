@@ -14,7 +14,7 @@ MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-hci-uart"
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-rt2800usb"
 
 MACHINE_EXTRA_RRECOMMENDS += "enigma2-plugin-drivers-dvb-usb-opticombo"
-MACHINE_EXTRA_RRECOMMENDS += "${@bb.utils.contains("GST_VERSION", "1.0", "gstreamer1.0-plugin-dvbmediasink", "gst-plugin-dvbmediasink", d)}"
+MACHINE_EXTRA_RRECOMMENDS += "gstreamer1.0-plugin-dvbmediasink"
 MACHINE_EXTRA_RRECOMMENDS += "edision-splash"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3"
