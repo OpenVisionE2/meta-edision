@@ -20,5 +20,6 @@ IMAGE_CMD_emmcimg_append = "\
     cd ${IMGDEPLOYDIR}; \
     zip -j ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/recovery_${MACHINE}_READ.ME ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
     zip -j ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/kernel.bin ${IMAGEDIR}/rootfs.tar.bz2; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
     rm -rf ${IMAGEDIR}; \
     "
