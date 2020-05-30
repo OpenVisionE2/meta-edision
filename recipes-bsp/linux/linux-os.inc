@@ -9,7 +9,7 @@ DEPENDS += "xz-native bc-native"
 KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
 # Pick up shared functions
-inherit kernel
+inherit kernel machine_kernel_pr samba_change_dialect
 
 export OS = "Linux"
 
