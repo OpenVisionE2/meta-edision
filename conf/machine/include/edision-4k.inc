@@ -19,7 +19,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 "
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    kernel-module-cdfs \
     kernel-module-rt2800usb \
 "
 
