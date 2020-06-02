@@ -32,12 +32,13 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-os"
 KERNEL_IMAGETYPE = "vmlinux.gz"
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-KERNEL_MODULE_AUTOLOAD += "r8723bs"
-KERNEL_MODULE_AUTOLOAD += "hci_uart"
+KERNEL_MODULE_AUTOLOAD += "\
+	r8723bs \
+	hci_uart \
+	xfs \
+	"
 
 MACHINE_FEATURES += "alsa wlan 3dtv switchoff osdposition hdmicec textlcd dvb-c videoenhancement"
-
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 require conf/machine/include/rootfs-ubi.inc
 
