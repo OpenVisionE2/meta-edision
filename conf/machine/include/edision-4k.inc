@@ -13,7 +13,7 @@ require conf/machine/include/arm/arch-armv8a.inc
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     edision-dvb-modules-${MACHINE} \
     edision-resizerootfs \
-    wlan-qcacld-20 \
+    kernel-module-extrawlan-qcacld-20 \
     firmware-qca6174 \
     wireless-regdb-static \
 "
