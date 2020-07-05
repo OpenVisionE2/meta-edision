@@ -38,7 +38,7 @@ KERNEL_MODULE_AUTOLOAD += "\
 	xfs \
 	"
 
-MACHINE_FEATURES += "alsa wlan 3dtv switchoff osdposition hdmicec textlcd dvb-c videoenhancement"
+MACHINE_FEATURES += "alsa switchoff osdposition hdmicec textlcd dvb-c videoenhancement"
 
 require conf/machine/include/rootfs-ubi.inc
 

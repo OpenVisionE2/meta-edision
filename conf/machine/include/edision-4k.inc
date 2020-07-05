@@ -50,7 +50,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-MACHINE_FEATURES += "alsa 3dtv switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
+MACHINE_FEATURES += "alsa switchoff osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement"
 
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
