@@ -2,9 +2,6 @@ IMAGE_CLASSES += "edision4k-emmcimg"
 IMAGE_FSTYPES ?= "emmcimg tar.bz2"
 IMAGE_OVERHEAD_FACTOR = "1.0"
 
-IMAGEDIR ?= "${MACHINE}"
-IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
-
 IMAGE_CMD_emmcimg_append = "\
     mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
     cp -f ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.emmc ${IMGDEPLOYDIR}/${IMAGEDIR}/emmc.img; \
