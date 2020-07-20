@@ -20,6 +20,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
     kernel-module-rt2800usb \
+    ${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'edision-swapcreate', '',d)} \
 "
 
 MACHINE_EXTRA_RRECOMMENDS += "\
@@ -50,7 +51,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-MACHINE_FEATURES += "alsa switchoff hdmicec osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement mmc emmc"
+MACHINE_FEATURES += "alsa switchoff hdmicec osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement mmc emmc swap HDMI"
 
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
