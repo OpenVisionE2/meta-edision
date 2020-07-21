@@ -44,3 +44,5 @@ require conf/machine/include/rootfs-ubi.inc
 
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.bin"
+
+STB_PLATFORM = "edisionmips"

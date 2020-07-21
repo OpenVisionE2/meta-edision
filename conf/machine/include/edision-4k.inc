@@ -56,3 +56,5 @@ MACHINE_FEATURES += "alsa switchoff hdmicec osdposition dvb-c blindscan-tbs blin
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 require conf/machine/include/rootfs-emmc.inc
+
+STB_PLATFORM = "edision4k"
