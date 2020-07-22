@@ -1,4 +1,4 @@
-CHIPSET = "bcm72604"
+SOC_FAMILY = "bcm72604"
 
 BOX_BRAND = "edision"
 
