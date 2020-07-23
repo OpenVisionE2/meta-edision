@@ -31,8 +31,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-pcm --with-dtsdownmix --with-eac3 --with-h265 --with-vb9"
 
-PREFERRED_VERSION_wireless-regdb = "2018.10.24"
-
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "edision-blindscan-utils-${MACHINE}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "edision-blindscan-utils-${MACHINE}"
 
