@@ -24,7 +24,7 @@ SRC_URI[kernelpatch.sha256sum] = "f3876390e9cb3b02a0f20a374a852c2dd0a018f7188796
 
 FILES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}*"
 
-pkg_postinst_kernel-image () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
 	if [ -z "$D" ]
 	then
 		MTD_DEVICE=$(grep 'kernel' /proc/mtd | cut -f1 -d':')

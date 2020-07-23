@@ -32,7 +32,7 @@ kernel_do_install_append () {
 	install -m 0644 ${WORKDIR}/findkerneldevice.py ${D}/${KERNEL_IMAGEDEST}
 }
 
-pkg_postinst_kernel-image () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
 	if [ -z "$D" ]
 	then
 		python /${KERNEL_IMAGEDEST}/findkerneldevice.py

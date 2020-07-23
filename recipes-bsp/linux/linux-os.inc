@@ -18,7 +18,7 @@ B = "${WORKDIR}/build"
 
 KERNEL_IMAGEDEST = "tmp"
 
-pkg_postrm_kernel-image () {
+pkg_postrm_${KERNEL_PACKAGE_NAME}-image () {
 }
 
 do_rm_work() {
