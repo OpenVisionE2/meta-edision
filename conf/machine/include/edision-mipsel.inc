@@ -35,7 +35,6 @@ KERNEL_CONSOLE = "ttyS0,115200n8"
 KERNEL_MODULE_AUTOLOAD += "\
 	r8723bs \
 	hci_uart \
-	xfs \
 	"
 
 MACHINE_FEATURES += "alsa switchoff osdposition hdmicec dvb-c videoenhancement HDMI"
