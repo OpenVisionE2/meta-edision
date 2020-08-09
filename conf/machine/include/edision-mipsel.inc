@@ -9,21 +9,21 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 BOX_BRAND = "edision"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    os-dvb-modules-${MACHINE} \
-    kernel-module-extrawlan-rt8723bs \
-    firmware-rtl8723bs \
-"
+	os-dvb-modules-${MACHINE} \
+	kernel-module-extrawlan-rt8723bs \
+	firmware-rtl8723bs \
+	"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-    kernel-module-hci-uart \
-    kernel-module-rt2800usb \
-"
+	kernel-module-hci-uart \
+	kernel-module-rt2800usb \
+	"
 
 MACHINE_EXTRA_RRECOMMENDS += "\
-    enigma2-plugin-drivers-dvb-usb-opticombo \
-    gstreamer1.0-plugin-dvbmediasink \
-    edision-splash \
-"
+	enigma2-plugin-drivers-dvb-usb-opticombo \
+	gstreamer1.0-plugin-dvbmediasink \
+	edision-splash \
+	"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 

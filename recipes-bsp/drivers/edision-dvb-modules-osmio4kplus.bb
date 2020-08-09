@@ -1,4 +1,3 @@
-KV = "5.5.16"
 SRCDATE = "20200802"
 
 MODNAMES = "brcmstb-${MACHINE} ci si2183 avl6862 avl6261"

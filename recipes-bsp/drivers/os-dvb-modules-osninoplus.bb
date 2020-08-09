@@ -1,4 +1,3 @@
-KV = "4.8.17"
 SRCDATE = "20200806"
 
 MODNAMES = "linuxdvb"
