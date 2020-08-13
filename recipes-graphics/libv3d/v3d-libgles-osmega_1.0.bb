@@ -22,11 +22,11 @@ INHIBIT_PACKAGE_DEBUG_SPLIT  = "1"
 
 do_install() {
 	install -m 0755 -d ${D}${libdir}
-	oe_soinstall ${S}/lib/libv3dplatform.so.${PV} ${D}${libdir}
-	oe_soinstall ${S}/lib/libv3ddriver.so.${PV} ${D}${libdir}
+	oe_soinstall ${S}${base_libdir}/libv3dplatform.so.${PV} ${D}${libdir}
+	oe_soinstall ${S}${base_libdir}/libv3ddriver.so.${PV} ${D}${libdir}
 	ln -s libv3ddriver.so.${PV} ${D}${libdir}/libEGL.so
 	ln -s libv3ddriver.so.${PV} ${D}${libdir}/libGLESv2.so
-	install -m 0755 -d ${D}/${includedir}
+	install -m 0755 -d ${D}${includedir}
 	install -m 0644 ${S}/include/v3dplatform.h ${D}${includedir}
 	for d in EGL GLES GLES2 KHR; do
 		install -m 0755 -d ${D}${includedir}/$d

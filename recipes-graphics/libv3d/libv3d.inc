@@ -24,11 +24,11 @@ do_compile[noexec] = "1"
 
 do_install() {
 	install -m 0755 -d ${D}${libdir}
-	oe_soinstall ${S}/lib/${LIBV3DARCH}/libv3dplatform.so.${PV} ${D}${libdir}
-	oe_soinstall ${S}/lib/${LIBV3DARCH}/libv3ddriver.so.${PV} ${D}${libdir}
+	oe_soinstall ${S}${base_libdir}/${LIBV3DARCH}/libv3dplatform.so.${PV} ${D}${libdir}
+	oe_soinstall ${S}${base_libdir}/${LIBV3DARCH}/libv3ddriver.so.${PV} ${D}${libdir}
 	ln -s libv3ddriver.so.${PV} ${D}${libdir}/libEGL.so
 	ln -s libv3ddriver.so.${PV} ${D}${libdir}/libGLESv2.so
-	install -m 0755 -d ${D}/${includedir}
+	install -m 0755 -d ${D}${includedir}
 	install -m 0644 ${S}/include/v3dplatform.h ${D}${includedir}
 	for d in EGL GLES GLES2 GLES3 KHR; do
 		install -m 0755 -d ${D}${includedir}/$d

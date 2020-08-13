@@ -20,13 +20,13 @@ do_compile() {
 }
 
 do_install() {
-	install -d -m 0755 ${D}/${nonarch_base_libdir}/modules/${KV}/extra
+	install -d -m 0755 ${D}${nonarch_base_libdir}/modules/${KV}/extra
 	for modname in ${MODNAMES}; do
-		install -m 0644 ${S}/${modname}.ko ${D}/${nonarch_base_libdir}/modules/${KV}/extra/${modname}.ko
+		install -m 0644 ${S}/${modname}.ko ${D}${nonarch_base_libdir}/modules/${KV}/extra/${modname}.ko
 	done
 
-	install -d -m 0755 ${D}/${sysconfdir}/modules-load.d
+	install -d -m 0755 ${D}${sysconfdir}/modules-load.d
 	for modname in ${MODNAMES}; do
-		echo ${modname} >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
+		echo ${modname} >> ${D}${sysconfdir}/modules-load.d/_${MACHINE}.conf
 	done
 }
