@@ -1,4 +1,4 @@
-KERNELVERSION = "5.5.16"
+KERNELVERSION = "5.8"
 
 SOC_FAMILY = "bcm72604"
 
@@ -15,7 +15,7 @@ require conf/machine/include/arm/arch-armv8a.inc
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	edision-dvb-modules-${MACHINE} \
 	edision-resizerootfs \
-	kernel-module-extrawlan-qcacld-20 \
+	kernel-module-extrawlan-qca6174 \
 	firmware-qca6174 \
 	wireless-regdb-static \
 	"
