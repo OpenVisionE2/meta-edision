@@ -18,14 +18,8 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-extrawlan-qca6174 \
 	firmware-qca6174 \
 	wireless-regdb-static \
-	"
-
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
 	kernel-module-rt2800usb \
 	${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'edision-swapcreate', '',d)} \
-	"
-
-MACHINE_EXTRA_RRECOMMENDS += "\
 	enigma2-plugin-drivers-dvb-usb-opticombo \
 	gstreamer1.0-plugin-dvbmediasink \
 	edision-splash \

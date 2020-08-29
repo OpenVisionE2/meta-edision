@@ -12,14 +12,8 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	os-dvb-modules-${MACHINE} \
 	kernel-module-extrawlan-rt8723bs \
 	firmware-rtl8723bs \
-	"
-
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
 	kernel-module-hci-uart \
 	kernel-module-rt2800usb \
-	"
-
-MACHINE_EXTRA_RRECOMMENDS += "\
 	enigma2-plugin-drivers-dvb-usb-opticombo \
 	gstreamer1.0-plugin-dvbmediasink \
 	edision-splash \
