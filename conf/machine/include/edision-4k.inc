@@ -33,9 +33,6 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc = "edision-blindscan-utils-${MACHINE}"
 PREFERRED_PROVIDER_virtual/kernel = "linux-edision"
 PREFERRED_VERSION_linux-edision = "${KERNELVERSION}"
 
-PREFERRED_PROVIDER_virtual/egl = "libv3d-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 = "libv3d-${MACHINE}"
-
 MTD_BOOTFS = "mmcblk1p1"
 MTD_BLACK  = "mmcblk1"
 MTD_KERNEL = "mmcblk1p2"
