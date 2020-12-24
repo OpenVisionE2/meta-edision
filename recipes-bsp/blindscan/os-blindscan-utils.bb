@@ -3,6 +3,8 @@ SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
+OMPATIBLE_MACHINE = "^(osmega|osmini|osminiplus)$"
+
 PACKAGES = "os-blindscan-dvbs-utils os-blindscan-dvbc-utils"
 
 PROVIDES += "virtual/blindscan-dvbs virtual/blindscan-dvbc"
