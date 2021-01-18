@@ -21,7 +21,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-rt2800usb \
 	${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'edision-swapcreate', '',d)} \
 	enigma2-plugin-drivers-dvb-usb-opticombo \
-	gstreamer1.0-plugin-dvbmediasink \
 	edision-splash \
 	"
 

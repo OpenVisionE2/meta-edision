@@ -15,7 +15,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-hci-uart \
 	kernel-module-rt2800usb \
 	enigma2-plugin-drivers-dvb-usb-opticombo \
-	gstreamer1.0-plugin-dvbmediasink \
 	edision-splash \
 	"
 
