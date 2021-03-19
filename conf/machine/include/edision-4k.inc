@@ -15,13 +15,15 @@ require conf/machine/include/arm/arch-armv8a.inc
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	edision-dvb-modules-${MACHINE} \
 	edision-resizerootfs \
-	kernel-module-extrawlan-qca6174 \
-	firmware-qca6174 \
-	wireless-regdb-static \
-	kernel-module-rt2800usb \
+	edision-splash \
 	${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'edision-swapcreate', '',d)} \
 	enigma2-plugin-drivers-dvb-usb-opticombo \
-	edision-splash \
+	firmware-avl62x1-edision \
+	firmware-avl68x2-edision \
+	firmware-qca6174 \
+	kernel-module-rt2800usb \
+	kernel-module-extrawlan-qca6174 \
+	wireless-regdb-static \
 	"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-pcm --with-dtsdownmix --with-eac3 --with-h265 --with-vb9"
