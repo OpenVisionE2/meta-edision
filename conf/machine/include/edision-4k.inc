@@ -17,12 +17,20 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	edision-resizerootfs \
 	edision-splash \
 	${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'edision-swapcreate', '',d)} \
-	enigma2-plugin-drivers-dvb-usb-opticombo \
 	firmware-avl62x1-edision \
 	firmware-avl68x2-edision \
+	firmware-dvb-demod-si2168-a20 \
+	firmware-dvb-demod-si2168-a30 \
+	firmware-dvb-demod-si2168-b40 \
+	firmware-dvb-tuner-si2158-a20 \
 	firmware-qca6174 \
-	kernel-module-rt2800usb \
+	kernel-module-dvb-usb-dvbsky \
+	kernel-module-dvb-usb-v2 \
 	kernel-module-extrawlan-qca6174 \
+	kernel-module-m88ds3103 \
+	kernel-module-rt2800usb \
+	kernel-module-si2157 \
+	kernel-module-si2168 \
 	wireless-regdb-static \
 	"
 

@@ -9,13 +9,21 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 BOX_BRAND = "edision"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-	os-dvb-modules-${MACHINE} \
-	kernel-module-extrawlan-rt8723bs \
-	firmware-rtl8723bs \
-	kernel-module-hci-uart \
-	kernel-module-rt2800usb \
-	enigma2-plugin-drivers-dvb-usb-opticombo \
 	edision-splash \
+	firmware-dvb-demod-si2168-a20 \
+	firmware-dvb-demod-si2168-a30 \
+	firmware-dvb-demod-si2168-b40 \
+	firmware-dvb-tuner-si2158-a20 \
+	firmware-rtl8723bs \
+	kernel-module-dvb-usb-dvbsky \
+	kernel-module-dvb-usb-v2 \
+	kernel-module-extrawlan-rt8723bs \
+	kernel-module-hci-uart \
+	kernel-module-m88ds3103 \
+	kernel-module-rt2800usb \
+	kernel-module-si2157 \
+	kernel-module-si2168 \
+	os-dvb-modules-${MACHINE} \
 	"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3"
