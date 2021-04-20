@@ -38,7 +38,7 @@ KERNEL_MODULE_AUTOLOAD += "\
 	hci_uart \
 	"
 
-MACHINE_FEATURES += "alsa switchoff osdposition hdmicec dvb-c videoenhancement HDMI"
+MACHINE_FEATURES += "alsa switchoff osdposition hdmicec dvb-c videoenhancement HDMI linuxwifi"
 
 require conf/machine/include/rootfs-ubi.inc
 
