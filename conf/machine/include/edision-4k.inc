@@ -14,6 +14,7 @@ require conf/machine/include/arm/arch-armv8a.inc
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	edision-dvb-modules-${MACHINE} \
+	edision-libv3d \
 	edision-resizerootfs \
 	edision-splash \
 	${@bb.utils.contains('MACHINE_FEATURES', 'swap', 'edision-swapcreate', '',d)} \
@@ -41,6 +42,9 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc = "edision-blindscan-utils-${MACHINE}"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-edision"
 PREFERRED_VERSION_linux-edision = "${KERNELVERSION}"
+
+PREFERRED_PROVIDER_virtual/egl = "edision-libv3d"
+PREFERRED_PROVIDER_virtual/libgles2 = "edision-libv3d"
 
 MTD_BOOTFS = "mmcblk1p1"
 MTD_BLACK  = "mmcblk1"
