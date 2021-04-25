@@ -24,15 +24,11 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	firmware-dvb-demod-si2168-a30 \
 	firmware-dvb-demod-si2168-b40 \
 	firmware-dvb-tuner-si2158-a20 \
-	firmware-qca6174 \
 	kernel-module-dvb-usb-dvbsky \
 	kernel-module-dvb-usb-v2 \
-	kernel-module-extrawlan-qca6174 \
 	kernel-module-m88ds3103 \
-	kernel-module-rt2800usb \
 	kernel-module-si2157 \
 	kernel-module-si2168 \
-	wireless-regdb-static \
 	"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-pcm --with-dtsdownmix --with-eac3 --with-h265 --with-vb9"
