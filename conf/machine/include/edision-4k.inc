@@ -39,8 +39,8 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc = "edision-blindscan-utils-${MACHINE}"
 PREFERRED_PROVIDER_virtual/kernel = "linux-edision"
 PREFERRED_VERSION_linux-edision = "${KERNELVERSION}"
 
-PREFERRED_PROVIDER_virtual/egl = "edision-libv3d"
-PREFERRED_PROVIDER_virtual/libgles2 = "edision-libv3d"
+PREFERRED_PROVIDER_virtual/egl ?= "edision-libv3d"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "edision-libv3d"
 
 MTD_BOOTFS = "mmcblk1p1"
 MTD_BLACK  = "mmcblk1"
@@ -51,7 +51,7 @@ ROOTFS_FILE = "rootfs.tar.bz2"
 
 KERNEL_CONSOLE = "ttyS0,115200n8"
 
-MACHINE_FEATURES += "alsa switchoff hdmicec osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement mmc emmc swap HDMI wifiusbmodule linuxwifi wifi-direct"
+MACHINE_FEATURES += "alsa switchoff hdmicec osdposition dvb-c blindscan-tbs blindscan-dvbs blindscan-dvbc satip mountboot videoenhancement mmc emmc swap HDMI wifiusbmodule linuxwifi wifi-direct kodi19"
 
 require conf/machine/include/rootfs-emmc.inc
 
