@@ -16,8 +16,8 @@ IMAGE_CMD_emmcimg_append = " \
 	echo "The ${IMAGE_NAME}_recovery_emmc.zip deletes all images including the multiboot images" >>${IMGDEPLOYDIR}/${IMAGEDIR}/recovery_${MACHINE}_READ.ME; \
 	rm -f ${IMGDEPLOYDIR}/*.zip; \
 	cd ${IMGDEPLOYDIR}; \
-	zip -j ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/donate.txt ${IMAGEDIR}/recovery_${MACHINE}_READ.ME ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
-	zip -j ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/donate.txt ${IMAGEDIR}/${KERNEL_FILE} ${IMAGEDIR}/${ROOTFS_FILE}; \
+	zip ${IMAGE_NAME}_recovery_emmc.zip ${IMAGEDIR}/emmc.img ${IMAGEDIR}/imageversion ${IMAGEDIR}/donate.txt ${IMAGEDIR}/recovery_${MACHINE}_READ.ME ${IMAGEDIR}/noforce ${IMAGEDIR}/splash.bin ; \
+	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/imageversion ${IMAGEDIR}/donate.txt ${IMAGEDIR}/${KERNEL_FILE} ${IMAGEDIR}/${ROOTFS_FILE}; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
 	rm -rf ${IMAGEDIR}; \
 	"
